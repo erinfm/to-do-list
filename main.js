@@ -1,3 +1,4 @@
+/* eslint-disable prefer-destructuring */
 /* eslint-env browser */
 
 const clearBtn = document.querySelector('#clearBtn');
@@ -27,7 +28,9 @@ function populateList(todos = [], todosList) {
     .map((todo, index) => {
       return `
   <li>
-  <input type="checkbox" data-index=${index} id="item${index}" ${todo.done ? 'checked' : ''} />
+  <input type="checkbox" data-index=${index} id="item${index}" ${
+        todo.done ? 'checked' : ''
+        } />
         <label for="item${index}">${todo.text}</label>
   </li >
 `;
@@ -52,12 +55,16 @@ function clearAll() {
 }
 
 function checkAll() {
-  items.forEach(item => (item.done = true));
+  items.forEach(item => {
+    item.done = true;
+  });
   populateList(items, itemsList);
 }
 
 function uncheckAll() {
-  items.forEach(item => (item.done = false));
+  items.forEach(item => {
+    item.done = false;
+  });
   populateList(items, itemsList);
 }
 
