@@ -6,7 +6,7 @@
 
 body {
   font-size: 18px;
-  background: radial-gradient(circle at top left, #B0DAB9, #DAD299)
+  background: radial-gradient(circle at top left, #fbc7d4, #9796f0)
 }
 .wrapper {
   display: grid;
@@ -45,13 +45,36 @@ ul li {
 }
 
 input {
-  border: 1px solid lightgrey;
   border-radius: 10px;
   padding: 0.5em 0.5em;
   font-family: 'Nunito', sans-serif;
   font-size: 1em;
-  
   color: #555;
+}
+
+input[type="text"] {
+  border: 2px solid #69d1c5;
+}
+
+input[type="text"]:hover,
+input[type="text"]:focus
+ {
+  border: 2px solid rgb(37, 185, 168);
+}
+
+input[type="submit"]{
+  background: #69d1c5;
+  border: 2px solid #69d1c5;
+  color: #fff;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus
+ {
+  background: rgb(37, 185, 168);
+  border: 2px solid rgb(37, 185, 168);
+  color: #fff;
 }
 
 button {
@@ -61,7 +84,7 @@ button {
   padding: 0.5em 1em;
   margin: 0 0.5em;
   text-decoration: none;
-  background: #745c97;
+  background: #69d1c5;
   color: #ffffff;
   font-family: 'Nunito', sans-serif;
   font-size: 1em;
@@ -75,7 +98,7 @@ button {
 
 button:hover,
 button:focus {
-  background: #644d88;
+  background: rgb(37, 185, 168);
 }
 
 button:focus {
