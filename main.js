@@ -28,10 +28,19 @@ function populateList(todos = [], todosList) {
     .map((todo, index) => {
       return `
   <li>
-  <input type="checkbox" data-index=${index} id="item${index}" ${
+    <div class="column">
+      <div class="column-one custom-checkbox">
+        <input type="checkbox" data-index=${index} id="item${index}" ${
         todo.done ? 'checked' : ''
         } />
-        <label for="item${index}">${todo.text}</label>
+        <label for="item${index}"></label>      
+      </div>
+    </div>
+    <div class="column">
+      <div class="column-two">
+        <span>${todo.text}</span>
+      </div>
+    </div>
   </li >
 `;
     })

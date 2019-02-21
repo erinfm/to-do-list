@@ -5,51 +5,88 @@
 }
 
 body {
+  background: radial-gradient(circle at top left, #fbc7d4, #9796f0);
   font-size: 18px;
-  background: radial-gradient(circle at top left, #fbc7d4, #9796f0)
 }
+
 .wrapper {
   display: grid;
-  place-items: center;
   height: 100vh;
+  place-items: center;
 }
 
 .content-container {
+  background: #fff;
   border: 2px solid #f2f2f2;
   border-radius: 10px;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.15);
-  color: #666;
-  background: #fff;
+  color: #777;
+  display: grid;
+  font-family: 'Nunito', sans-serif;
   width: 600px;
   grid-column-start: 1;
-  font-family: 'Nunito', sans-serif;
-  display: grid;
   grid-gap: 1.5em;
-  padding: 1em;
   grid-template-areas:
   "header"
   "add-items-box"
   "todos"
   "footer-buttons";
+  padding: 1em;
+  width: 600px;
 }
 
-
-ul {
-  list-style-type: none;
-  list-style-position: outside;
+input[type=checkbox] {
+  visibility: hidden;
 }
 
-ul li {
-  font-size: 1em;
-  padding: 0.2em 0;
+.custom-checkbox {
+  border-radius:20%;
+  width: 30px;
+  height: 30px;
+  background: #ddd;
+  margin: 10px 15px 10px 0px;
+  position: relative;
+  
+}
+
+.custom-checkbox label {
+  border-radius: 20%;
+  cursor: pointer;
+  height: 22px;
+  width: 22px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  background: rgb(255, 255, 255);
+}
+
+.custom-checkbox label:after {
+  opacity: 0;
+  content: '';
+  height: 16px;
+  width: 30px;
+  position: absolute;
+  top: 0px;
+  left: -1px;
+  border: 6px solid rgb(37, 185, 168);
+  border-top: none;
+  border-right: none;
+  transform: rotate(-45deg);
+}
+
+.custom-checkbox input[type=checkbox]:checked + label:after {
+  opacity: 1;
 }
 
 input {
   border-radius: 10px;
-  padding: 0.5em 0.5em;
+  color: #555;
   font-family: 'Nunito', sans-serif;
   font-size: 1em;
-  color: #555;
+  padding: 0.5em 0.5em;
+  transition: background 200ms ease-in-out, 
+  border-color 200ms ease-in-out, 
+  transform 120ms ease;
 }
 
 input[type="text"] {
@@ -60,11 +97,11 @@ input[type="text"]:hover,
 input[type="text"]:focus
  {
   border: 2px solid rgb(37, 185, 168);
-}
+ }
 
 input[type="submit"]{
-  background: #69d1c5;
-  border: 2px solid #69d1c5;
+  background: rgb(37, 185, 168);
+  border: 2px solid rgb(37, 185, 168);
   color: #fff;
   cursor: pointer;
 }
@@ -72,28 +109,38 @@ input[type="submit"]{
 input[type="submit"]:hover,
 input[type="submit"]:focus
  {
-  background: rgb(37, 185, 168);
-  border: 2px solid rgb(37, 185, 168);
+  background: rgb(35, 173, 157);
+  border: 2px solid rgb(35, 173, 157);
   color: #fff;
 }
 
+ul {
+  list-style-position: outside;
+  list-style-type: none;
+}
+
+ul li {
+  align-items: center;
+  display: flex;
+  font-size: 1em;
+  justify-content: flex-start; 
+  padding: 0.2em 0;
+}
+
 button {
-  /* display: inline-block; */
+  background: #69d1c5;
   border: none;
   border-radius: 10px;
-  padding: 0.5em 1em;
-  margin: 0 0.5em;
-  text-decoration: none;
-  background: #69d1c5;
   color: #ffffff;
+  cursor: pointer;
   font-family: 'Nunito', sans-serif;
   font-size: 1em;
-  cursor: pointer;
+  margin: 0 0.5em;
+  padding: 0.5em 1em;
+  text-decoration: none;
   text-align: center;
   transition: background 200ms ease-in-out, 
               transform 120ms ease;
-  -webkit-appearance: none;
-  -moz-appearance: none;
 }
 
 button:hover,
@@ -123,7 +170,6 @@ button:active {
 .todos-box {
   grid-area: todos;
   min-height: 250px;
-
 }
 
 .add-items-box {
