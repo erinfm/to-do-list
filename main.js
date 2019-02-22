@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable prefer-destructuring */
 /* eslint-env browser */
 
@@ -41,19 +42,27 @@ function populateList(todos = [], todosList) {
         <span>${todo.text}</span>
       </div>
     </div>
-    <span class="delete-btn">&#x2715;<span>
-  </li >
+    <span data-text="${todo.text}" class="delete-btn">&#x2715;<span>
+  </li>
 `;
     })
     .join('');
 }
 
 function toggleDone(e) {
-  if (!e.target.matches('input')) return;
   const el = e.target;
   const index = el.dataset.index;
   items[index].done = !items[index].done;
   localStorage.setItem('items', JSON.stringify(items));
+  populateList(items, itemsList);
+}
+
+function deleteItem(e) {
+  let todoValue = e.target.dataset.text;
+  let index = items.map(i => i.text).indexOf(todoValue);
+  if (index > -1) {
+    items.splice(index, 1);
+  }
   populateList(items, itemsList);
 }
 
@@ -83,5 +92,8 @@ checkBtn.addEventListener('click', checkAll);
 uncheckBtn.addEventListener('click', uncheckAll);
 
 addItems.addEventListener('submit', addItem);
-itemsList.addEventListener('click', toggleDone);
+itemsList.addEventListener('click', e => {
+  if (e.target.matches('.delete-btn')) deleteItem(e);
+  if (e.target.matches('input')) toggleDone(e);
+});
 populateList(items, itemsList);
