@@ -5,7 +5,7 @@
 }
 
 body {
-  background: radial-gradient(circle at top left, #fbc7d4, #9796f0);
+  background: radial-gradient(circle at top left, #fbc7d4, #9796f0) fixed;
   font-size: 18px;
 }
 
@@ -126,7 +126,7 @@ ul li {
   display: flex;
   font-size: 1em;
   justify-content: flex-start; 
-  padding: 0.2em 0;
+  padding: 0.3em 0;
 }
 
 span {
@@ -135,8 +135,9 @@ span {
 }
 
 .delete-btn {
-  font-size: 1.5em;
   color: #ccc;
+  font-size: 1.5em;
+  cursor: pointer;
   position: absolute;
   right: 10px;
 }
@@ -201,12 +202,32 @@ button:active {
 }
 
 @media all and (max-width: 480px) {
+  body {
+    background: linear-gradient(#6E48AA, #9D50BB) fixed;
+    font-size: 16px;
+  }
   .content-container {
+    padding: 1.5em;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
     width: 100%;
+    color: #fff;
+  }
+
+  .delete-btn {
+    color: #fff;
+  }
+
+  .footer-buttons {
+  /* bottom: 10px;   */
+    
   }
 
   span {
-    max-width: 80%;
+    /* max-width: 10%; */
   }
 }
 
