@@ -41,6 +41,7 @@ function populateList(todos = [], todosList) {
         <span>${todo.text}</span>
       </div>
     </div>
+    <span class="delete-btn">&#x2715;<span>
   </li >
 `;
     })

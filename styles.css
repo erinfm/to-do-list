@@ -94,12 +94,11 @@ input[type="text"] {
 }
 
 input[type="text"]:hover,
-input[type="text"]:focus
- {
+input[type="text"]:focus {
   border: 2px solid rgb(37, 185, 168);
  }
 
-input[type="submit"]{
+input[type="submit"] {
   background: rgb(37, 185, 168);
   border: 2px solid rgb(37, 185, 168);
   color: #fff;
@@ -107,11 +106,14 @@ input[type="submit"]{
 }
 
 input[type="submit"]:hover,
-input[type="submit"]:focus
- {
+input[type="submit"]:focus {
   background: rgb(35, 173, 157);
   border: 2px solid rgb(35, 173, 157);
   color: #fff;
+}
+
+input[type="submit"]:active {
+    transform: scale(0.99);
 }
 
 ul {
@@ -125,6 +127,18 @@ ul li {
   font-size: 1em;
   justify-content: flex-start; 
   padding: 0.2em 0;
+}
+
+span {
+  display: block;
+  max-width: 450px;
+}
+
+.delete-btn {
+  font-size: 1.5em;
+  color: #ccc;
+  position: absolute;
+  right: 10px;
 }
 
 button {
@@ -160,7 +174,6 @@ button:active {
   display: flex;
   justify-content: space-evenly;
   grid-area: footer-buttons;
-  /* justify-self: center; */
 }
 
 .main-head {
@@ -170,6 +183,7 @@ button:active {
 .todos-box {
   grid-area: todos;
   min-height: 250px;
+  position: relative;
 }
 
 .add-items-box {
@@ -180,11 +194,19 @@ button:active {
   .content-container {
     width: 500px;
   }
+
+  span {
+    max-width: 350px;
+  }
 }
 
 @media all and (max-width: 480px) {
   .content-container {
     width: 100%;
+  }
+
+  span {
+    max-width: 80%;
   }
 }
 
