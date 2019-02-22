@@ -21,16 +21,17 @@ body {
   border-radius: 10px;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.15);
   color: #777;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   font-family: 'Nunito', sans-serif;
   width: 600px;
-  grid-column-start: 1;
+  /* grid-column-start: 1;
   grid-gap: 1.5em;
   grid-template-areas:
   "header"
   "add-items-box"
   "todos"
-  "footer-buttons";
+  "footer-buttons"; */
   padding: 1em;
   width: 600px;
 }
@@ -135,11 +136,18 @@ span {
 }
 
 .delete-btn {
-  color: #ccc;
+  color: #999;
+  opacity: 0.5;
   font-size: 1.5em;
   cursor: pointer;
   position: absolute;
   right: 10px;
+  transition: opacity 200ms ease;
+}
+
+.delete-btn:hover,
+.delete-btn:focus {
+  opacity: 1;
 }
 
 button {
@@ -172,23 +180,29 @@ button:active {
 }
 
 .footer-buttons {
+  /* align-self: flex-end; */
   display: flex;
+  /* align-content: flex-end; */
   justify-content: space-evenly;
   grid-area: footer-buttons;
 }
 
 .main-head {
   grid-area: header;
+  margin-bottom: 1em;
 }
 
 .todos-box {
   grid-area: todos;
   min-height: 250px;
   position: relative;
+  flex-grow: 2;
+  margin-bottom: 2em;
 }
 
 .add-items-box {
   grid-area: add-items-box;
+  margin-bottom: 2em;
 }
 
 @media all and (max-width: 736px) {
@@ -197,7 +211,7 @@ button:active {
   }
 
   span {
-    max-width: 350px;
+    max-width: 330px;
   }
 }
 
@@ -207,7 +221,6 @@ button:active {
     font-size: 16px;
   }
   .content-container {
-    padding: 1.5em;
     height: 100%;
     background-color: transparent;
     border: none;
@@ -219,6 +232,7 @@ button:active {
 
   .delete-btn {
     color: #fff;
+    opacity: 0.5;
   }
 
   .footer-buttons {
