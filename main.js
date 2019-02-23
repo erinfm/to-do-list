@@ -58,8 +58,8 @@ function toggleDone(e) {
 }
 
 function deleteItem(e) {
-  let todoValue = e.target.dataset.text;
-  let index = items.map(i => i.text).indexOf(todoValue);
+  const todoValue = e.target.dataset.text;
+  const index = items.map(i => i.text).indexOf(todoValue);
   if (index > -1) {
     items.splice(index, 1);
   }

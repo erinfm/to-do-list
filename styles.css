@@ -25,13 +25,6 @@ body {
   flex-direction: column;
   font-family: 'Nunito', sans-serif;
   width: 600px;
-  /* grid-column-start: 1;
-  grid-gap: 1.5em;
-  grid-template-areas:
-  "header"
-  "add-items-box"
-  "todos"
-  "footer-buttons"; */
   padding: 1em;
   width: 600px;
 }
@@ -41,17 +34,16 @@ input[type=checkbox] {
 }
 
 .custom-checkbox {
-  border-radius:20%;
+  border-radius:10%;
   width: 30px;
   height: 30px;
   background: #ddd;
-  margin: 10px 15px 10px 0px;
+  margin: 10px 20px 10px 5px;
   position: relative;
-  
 }
 
 .custom-checkbox label {
-  border-radius: 20%;
+  border-radius: 10%;
   cursor: pointer;
   height: 22px;
   width: 22px;
@@ -80,11 +72,12 @@ input[type=checkbox] {
 }
 
 input {
-  border-radius: 10px;
+  border-radius: 30px;
   color: #555;
   font-family: 'Nunito', sans-serif;
   font-size: 1em;
-  padding: 0.5em 0.5em;
+  
+  padding: 0.5em 1em;
   transition: background 200ms ease-in-out, 
   border-color 200ms ease-in-out, 
   transform 120ms ease;
@@ -104,6 +97,7 @@ input[type="submit"] {
   border: 2px solid rgb(37, 185, 168);
   color: #fff;
   cursor: pointer;
+  font-weight: 700;
 }
 
 input[type="submit"]:hover,
@@ -128,6 +122,7 @@ ul li {
   font-size: 1em;
   justify-content: flex-start; 
   padding: 0.3em 0;
+  border-bottom: 1px solid #f1f1f1;
 }
 
 span {
@@ -153,11 +148,12 @@ span {
 button {
   background: #69d1c5;
   border: none;
-  border-radius: 10px;
+  border-radius: 30px;
   color: #ffffff;
   cursor: pointer;
   font-family: 'Nunito', sans-serif;
   font-size: 1em;
+  font-weight: 700;
   margin: 0 0.5em;
   padding: 0.5em 1em;
   text-decoration: none;
@@ -180,20 +176,15 @@ button:active {
 }
 
 .footer-buttons {
-  /* align-self: flex-end; */
   display: flex;
-  /* align-content: flex-end; */
   justify-content: space-evenly;
-  grid-area: footer-buttons;
 }
 
 .main-head {
-  grid-area: header;
   margin-bottom: 1em;
 }
 
 .todos-box {
-  grid-area: todos;
   min-height: 250px;
   position: relative;
   flex-grow: 2;
@@ -201,7 +192,6 @@ button:active {
 }
 
 .add-items-box {
-  grid-area: add-items-box;
   margin-bottom: 2em;
 }
 
@@ -217,31 +207,34 @@ button:active {
 
 @media all and (max-width: 480px) {
   body {
-    background: linear-gradient(#6E48AA, #9D50BB) fixed;
+    background: linear-gradient(#ffffff 60%, #fdfdfd) fixed;
     font-size: 16px;
   }
+
+  button {
+    background-color: #fdfdfd;
+    border: 2px solid #69d1c5;
+    color: #69d1c5;
+  }
+
+  button:hover,
+  button:focus {
+    background-color: #f5f5f5;
+  }
+
   .content-container {
     height: 100%;
     background-color: transparent;
     border: none;
+    padding: 20px 20px 20px 20px;
     border-radius: 0;
     box-shadow: none;
     width: 100%;
-    color: #fff;
-  }
-
-  .delete-btn {
-    color: #fff;
-    opacity: 0.5;
-  }
-
-  .footer-buttons {
-  /* bottom: 10px;   */
-    
+    color: #555;
   }
 
   span {
-    /* max-width: 10%; */
+    max-width: 60vw; 
   }
 }
 
