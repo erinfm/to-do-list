@@ -30,7 +30,7 @@ body {
 }
 
 .linethrough {
-  text-decoration: line-through #69d1c5 ;
+  text-decoration: line-through #9796f0 ;
 }
 
 input[type=checkbox] {
@@ -41,9 +41,13 @@ input[type=checkbox] {
   border-radius:50%;
   width: 24px;
   height: 24px;
-  background: #69d1c5;
+  background: #9796f0;
   margin: 10px 20px 10px 5px;
   position: relative;
+}
+
+.custom-checkbox:hover {
+  background: #8c8be6;
 }
 
 .custom-checkbox label {
@@ -64,9 +68,9 @@ input[type=checkbox] {
   width: 13px;
   position: absolute;
   top: 4px;
-  left: 1.5px;
+  left: 2px;
   background: #fff;
-  border: 3px solid #69d1c5;
+  border: 3px solid #9796f0;
   border-top: none;
   border-right: none;
   transform: rotate(-45deg);
@@ -77,11 +81,11 @@ input[type=checkbox] {
 }
 
 input {
-  border-radius: 30px;
+  border-radius: 10px;
   color: #555;
   font-family: 'Nunito', sans-serif;
   font-size: 1em;
-  
+
   padding: 0.5em 1em;
   transition: background 200ms ease-in-out, 
   border-color 200ms ease-in-out, 
@@ -89,27 +93,32 @@ input {
 }
 
 input[type="text"] {
-  border: 2px solid #69d1c5;
+  border: 2px solid #9796f0;
 }
 
 input[type="text"]:hover,
 input[type="text"]:focus {
-  border: 2px solid rgb(37, 185, 168);
+  border: 2px solid #8c8be6;
+  outline: 0;
  }
 
 input[type="submit"] {
-  background: rgb(37, 185, 168);
-  border: 2px solid rgb(37, 185, 168);
+  background: #9796f0;
+  border: 2px solid #9796f0;
   color: #fff;
   cursor: pointer;
   font-weight: 700;
 }
 
-input[type="submit"]:hover,
-input[type="submit"]:focus {
-  background: rgb(35, 173, 157);
-  border: 2px solid rgb(35, 173, 157);
+input[type="submit"]:hover {
+  background: #8c8be6;
+  border: 2px solid #8c8be6;
   color: #fff;
+  outline: 0;
+}
+
+input[type="submit"]:focus {
+  outline: 0;
 }
 
 input[type="submit"]:active {
@@ -131,11 +140,10 @@ ul li {
   border-bottom: 1px solid #f1f1f1; 
 }
 
-
-
 span {
   display: block;
   max-width: 450px;
+  word-wrap: break-word;
 }
 
 .delete-btn {
@@ -154,10 +162,10 @@ span {
 }
 
 button {
-  background: #69d1c5;
-  border: none;
-  border-radius: 30px;
-  color: #ffffff;
+  border: 2px solid #9796f0;
+  border-radius: 10px;
+  background-color: transparent;
+  color: #9796f0;
   cursor: pointer;
   font-family: 'Nunito', sans-serif;
   font-size: 1em;
@@ -172,7 +180,8 @@ button {
 
 button:hover,
 button:focus {
-  background: rgb(37, 185, 168);
+  background: #9796f0;
+  color: #fff
 }
 
 button:focus {
@@ -215,19 +224,18 @@ button:active {
 
 @media all and (max-width: 480px) {
   body {
-    background: linear-gradient(#ffffff 60%, #fdfdfd) fixed;
     font-size: 16px;
   }
 
   button {
-    background-color: #fdfdfd;
-    border: 2px solid #69d1c5;
-    color: #69d1c5;
+    border: 2px solid #fff;
+    color: #fff;
   }
 
   button:hover,
   button:focus {
     background-color: #f5f5f5;
+    color: #9796f0;
   }
 
   .content-container {
@@ -238,7 +246,14 @@ button:active {
     border-radius: 0;
     box-shadow: none;
     width: 100%;
+    color: #fff;
+  }
+
+  .todos-box {
+    border-radius: 10px;
+    background: #fff;
     color: #555;
+    padding: 10px 20px;
   }
 
   span {
