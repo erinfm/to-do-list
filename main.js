@@ -38,13 +38,14 @@ function populateList(todos = [], todosList) {
       </div>
     </div>
     <div class="column">
-      <div class="column-two">
-        <span>${todo.text}</span>
+      <div class="column-two ${
+        todo.done ? 'linethrough' : ''}">
+          <span> ${ todo.text}</span >
       </div>
     </div>
-    <span data-text="${todo.text}" class="delete-btn">&#x2715;<span>
+        <span data-text="${todo.text}" class="delete-btn">&#x2715;<span>
   </li>
-`;
+          `;
     })
     .join('');
 }

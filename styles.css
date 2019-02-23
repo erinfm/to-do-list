@@ -29,39 +29,44 @@ body {
   width: 600px;
 }
 
+.strikethrough {
+  text-decoration: line-through #69d1c5 ;
+}
+
 input[type=checkbox] {
   visibility: hidden;
 }
 
 .custom-checkbox {
-  border-radius:10%;
-  width: 30px;
-  height: 30px;
-  background: #ddd;
+  border-radius:50%;
+  width: 24px;
+  height: 24px;
+  background: #69d1c5;
   margin: 10px 20px 10px 5px;
   position: relative;
 }
 
 .custom-checkbox label {
-  border-radius: 10%;
+  border-radius: 50%;
   cursor: pointer;
-  height: 22px;
-  width: 22px;
+  height: 18px;
+  width: 18px;
   position: absolute;
-  top: 4px;
-  left: 4px;
-  background: rgb(255, 255, 255);
+  top: 3px;
+  left: 3px;
+  background: #fff;
 }
 
 .custom-checkbox label:after {
   opacity: 0;
   content: '';
-  height: 16px;
-  width: 30px;
+  height: 7px;
+  width: 13px;
   position: absolute;
-  top: 0px;
-  left: -1px;
-  border: 6px solid rgb(37, 185, 168);
+  top: 4px;
+  left: 1.5px;
+  background: #fff;
+  border: 3px solid #69d1c5;
   border-top: none;
   border-right: none;
   transform: rotate(-45deg);
@@ -117,13 +122,16 @@ ul {
 }
 
 ul li {
+  position: relative;
   align-items: center;
   display: flex;
   font-size: 1em;
   justify-content: flex-start; 
   padding: 0.3em 0;
-  border-bottom: 1px solid #f1f1f1;
+  border-bottom: 1px solid #f1f1f1; 
 }
+
+
 
 span {
   display: block;
