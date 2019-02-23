@@ -46,10 +46,10 @@ function populateList(todos = [], todosList) {
     </div>
     <div class="column">
       <div class="column-two ${todo.done ? 'linethrough' : ''}">
-          <span> ${todo.text}</span >
+          <span data-index=${index}" > ${todo.text}</span>
       </div>
     </div>
-        <span data-text="${todo.text}" class="delete-btn">&#x2715;<span>
+        <p data-text="${todo.text}" class="delete-btn">&#x2715;<p>
   </li>
           `;
     })
@@ -101,6 +101,7 @@ uncheckBtn.addEventListener('click', uncheckAll);
 
 addItems.addEventListener('submit', addItem);
 itemsList.addEventListener('click', e => {
+  console.log(e)
   if (e.target.matches('.delete-btn')) deleteItem(e);
   if (e.target.matches('input')) toggleDone(e);
 });
