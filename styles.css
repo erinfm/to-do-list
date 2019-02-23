@@ -285,6 +285,10 @@ button:active {
     color: #fff;
   }
 
+  .custom-checkbox {
+    margin: 10px 15px 10px 5px;
+  }
+
   .todos-box {
     border-radius: 10px;
     background: #fff;
