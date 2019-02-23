@@ -2,7 +2,7 @@
 /* eslint-disable prefer-destructuring */
 /* eslint-env browser */
 
-const clearBtn = document.querySelector('#clearBtn');
+const deleteBtn = document.querySelector('#deleteBtn');
 const checkBtn = document.querySelector('#checkBtn');
 const currentDate = document.querySelector('#current-date');
 const uncheckBtn = document.querySelector('#uncheckBtn');
@@ -73,7 +73,7 @@ function deleteItem(e) {
   populateList(items, itemsList);
 }
 
-function clearAll() {
+function deleteAll() {
   localStorage.clear();
   while (itemsList.firstChild) {
     itemsList.removeChild(itemsList.firstChild);
@@ -94,7 +94,7 @@ function uncheckAll() {
   populateList(items, itemsList);
 }
 
-clearBtn.addEventListener('click', clearAll);
+deleteBtn.addEventListener('click', deleteAll);
 checkBtn.addEventListener('click', checkAll);
 document.addEventListener('DOMContentLoaded', displayCurrentDate);
 uncheckBtn.addEventListener('click', uncheckAll);
