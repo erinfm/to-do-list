@@ -274,6 +274,14 @@ button:active {
     outline: 0;
   }
 
+  label:after {
+    content:'';
+    position:absolute;
+    top:-10px; bottom:-10px; 
+    left:-70px; right:-100px; 
+  }
+  
+
   .content-container {
     height: 100%;
     background-color: transparent;
