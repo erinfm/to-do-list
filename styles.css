@@ -29,7 +29,7 @@ body {
   width: 600px;
 }
 
-.strikethrough {
+.linethrough {
   text-decoration: line-through #69d1c5 ;
 }
 
