@@ -5,7 +5,7 @@
 }
 
 body {
-  background: radial-gradient(circle at top left, #fbc7d4, #9796f0) fixed;
+  background: radial-gradient(circle at top left, #f8b9c9, #9796f0) fixed;
   font-size: 18px;
 }
 
@@ -257,6 +257,21 @@ button:active {
 
   input {
     padding: 0.5em;
+  }
+
+  input[type="submit"] {
+    background: #8c8be6;
+    border: 2px solid #8c8be6;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 700;
+  }
+  
+  input[type="submit"]:hover {
+    background: #7e7ddb;
+    border: 2px solid #7e7ddb;
+    color: #fff;
+    outline: 0;
   }
 
   .content-container {
