@@ -41,12 +41,12 @@ function populateList(todos = [], todosList) {
         <input type="checkbox" data-index=${index} id="item${index}" ${
         todo.done ? 'checked' : ''
         } />
-        <label for="item${index}"></label>      
+        <label for="item${index}" data-index=${index}" ></label>   
       </div>
     </div>
     <div class="column">
       <div class="column-two ${todo.done ? 'linethrough' : ''}">
-          <span data-index=${index}" > ${todo.text}</span>
+          <label for="item${index}" data-index=${index}" > ${todo.text}</label>
       </div>
     </div>
         <p data-text="${todo.text}" class="delete-btn">&#x2715;<p>
