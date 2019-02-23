@@ -289,7 +289,12 @@ button:active {
     border-radius: 10px;
     background: #fff;
     color: #555;
+    margin-bottom: 1em;
     padding: 10px 20px;
+  }
+
+  .add-items-box {
+    margin-bottom: 1em;
   }
 
   span {
