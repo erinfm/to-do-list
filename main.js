@@ -46,7 +46,7 @@ function populateList(todos = [], todosList) {
     </div>
     <div class="column">
       <div class="column-two ${todo.done ? 'linethrough' : ''}">
-          <label for="item${index}" data-index=${index}" > ${todo.text}</label>
+          <label for="item${index}" data-index=${index}"> <span>${todo.text} </span> </label>
       </div>
     </div>
         <p data-text="${todo.text}" class="delete-btn">&#x2715;<p>
