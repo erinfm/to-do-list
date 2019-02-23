@@ -9,7 +9,7 @@ const uncheckBtn = document.querySelector('#uncheckBtn');
 
 const addItems = document.querySelector('.add-items');
 const itemsList = document.querySelector('.todos');
-const items = JSON.parse(localStorage.getItem('items')) || [];
+let items = JSON.parse(localStorage.getItem('items')) || [];
 
 function displayCurrentDate() {
   const options = { weekday: 'long', month: 'long', day: 'numeric' };
@@ -78,6 +78,7 @@ function deleteAll() {
   while (itemsList.firstChild) {
     itemsList.removeChild(itemsList.firstChild);
   }
+  items = [];
 }
 
 function checkAll() {
