@@ -102,7 +102,6 @@ uncheckBtn.addEventListener('click', uncheckAll);
 
 addItems.addEventListener('submit', addItem);
 itemsList.addEventListener('click', e => {
-  console.log(e)
   if (e.target.matches('.delete-btn')) deleteItem(e);
   if (e.target.matches('input')) toggleDone(e);
 });
