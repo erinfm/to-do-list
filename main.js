@@ -19,7 +19,9 @@ function displayCurrentDate() {
 
 function addItem(e) {
   e.preventDefault();
-  const text = this.querySelector('[name=item]').value;
+  const inputText = this.querySelector('[name=item]').value;
+  // Change occurences of " to &quot; to prevent problems deleting item
+  const text = inputText.replace(/"/g, '&quot;');
   const item = {
     text,
     done: false
@@ -40,13 +42,15 @@ function populateList(todos = [], todosList) {
       <div class="column-one custom-checkbox">
         <input type="checkbox" data-index=${index} id="item${index}" ${
         todo.done ? 'checked' : ''
-        } />
+      } />
         <label for="item${index}" data-index=${index}" ></label>   
       </div>
     </div>
     <div class="column">
       <div class="column-two ${todo.done ? 'linethrough' : ''}">
-          <label for="item${index}" data-index=${index}"> <span>${todo.text} </span> </label>
+          <label for="item${index}" data-index=${index}"> <span>${
+        todo.text
+      } </span> </label>
       </div>
     </div>
         <p data-text="${todo.text}" class="delete-btn">&#x2715;<p>
@@ -66,7 +70,9 @@ function toggleDone(e) {
 
 function deleteItem(e) {
   const todoValue = e.target.dataset.text;
-  const index = items.map(i => i.text).indexOf(todoValue);
+  // Replace occurences of " back to &quot; so we can get matches on items array
+  const todoValueEdited = todoValue.replace(/"/g, '&quot;');
+  const index = items.map(i => i.text).indexOf(todoValueEdited);
   if (index > -1) {
     items.splice(index, 1);
   }
