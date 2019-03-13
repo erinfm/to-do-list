@@ -114,8 +114,8 @@ input
 
     padding: .5em 1em;
 
-    transition: background 200ms ease-in-out,
-    border-color 200ms ease-in-out,
+    transition: background 130ms ease-in-out,
+    border-color 130ms ease-in-out,
     transform 120ms ease;
 
     color: #555;
@@ -217,7 +217,7 @@ span
     right: 10px;
 
     cursor: pointer;
-    transition: opacity 200ms ease;
+    transition: opacity 130ms ease;
 
     opacity: .5;
     color: #999;
@@ -239,8 +239,8 @@ button
     padding: .5em 1em;
 
     cursor: pointer;
-    transition: background 200ms ease-in-out,
-    transform 120ms ease;
+    transition: background 130ms ease-in-out,
+    transform 130ms ease;
     text-align: center;
     text-decoration: none;
 
