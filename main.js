@@ -2,13 +2,14 @@
 /* eslint-disable prefer-destructuring */
 /* eslint-env browser */
 
-const deleteBtn = document.querySelector('#deleteBtn');
-const checkBtn = document.querySelector('#checkBtn');
-const currentDate = document.querySelector('#current-date');
-const uncheckBtn = document.querySelector('#uncheckBtn');
+const deleteBtn = document.getElementById('deleteBtn');
+const checkBtn = document.getElementById('checkBtn');
+const currentDate = document.getElementById('current-date');
+const uncheckBtn = document.getElementById('uncheckBtn');
 
 const addItems = document.querySelector('.add-items');
 const itemsList = document.querySelector('.todos');
+
 let items = JSON.parse(localStorage.getItem('items')) || [];
 
 function displayCurrentDate() {
@@ -29,7 +30,7 @@ function addItem(e) {
 
   items.push(item);
   populateList(items, itemsList);
-  localStorage.setItem('items', JSON.stringify(items));
+
   this.reset();
 }
 
@@ -37,45 +38,50 @@ function populateList(todos = [], todosList) {
   todosList.innerHTML = todos
     .map((todo, index) => {
       return `
-  <li>
-    <div class="column">
-      <div class="column-one custom-checkbox">
-        <input type="checkbox" data-index=${index} id="item${index}" ${
-        todo.done ? 'checked' : ''
-      } />
-        <label for="item${index}" data-index=${index}" ></label>   
-      </div>
+  <li data-index=${index}>   
+    <div class="column-one custom-checkbox">
+      <input type="checkbox" id="item${index}" ${todo.done ? 'checked' : ''} />
+      <label for="item${index}" ></label>   
     </div>
-    <div class="column">
-      <div class="column-two ${todo.done ? 'linethrough' : ''}">
-          <label for="item${index}" data-index=${index}"> <span>${
-        todo.text
-      } </span> </label>
-      </div>
+  
+  
+    <div class="column-two">
+        <label for="item${index}">
+        <span class=${todo.done ? 'linethrough' : ''}>${todo.text}</span>
+        </label>
     </div>
-        <p data-text="${todo.text}" class="delete-btn">&#x2715;<p>
+  
+    <span data-text="${todo.text}" class="delete-btn">&#x2715;</span>
   </li>
           `;
     })
     .join('');
+
+  localStorage.setItem('items', JSON.stringify(items));
 }
 
 function toggleDone(e) {
-  const el = e.target;
-  const index = el.dataset.index;
+  // Get the closest li element, as this will have the item index data
+  const closestLi = e.closest('li');
+
+  const index = closestLi.dataset.index;
+
   items[index].done = !items[index].done;
-  localStorage.setItem('items', JSON.stringify(items));
+
   populateList(items, itemsList);
 }
 
 function deleteItem(e) {
   const todoValue = e.target.dataset.text;
+
   // Replace occurences of " back to &quot; so we can get matches on items array
   const todoValueEdited = todoValue.replace(/"/g, '&quot;');
+
   const index = items.map(i => i.text).indexOf(todoValueEdited);
   if (index > -1) {
     items.splice(index, 1);
   }
+
   populateList(items, itemsList);
 }
 
@@ -109,6 +115,8 @@ uncheckBtn.addEventListener('click', uncheckAll);
 addItems.addEventListener('submit', addItem);
 itemsList.addEventListener('click', e => {
   if (e.target.matches('.delete-btn')) deleteItem(e);
-  if (e.target.matches('input')) toggleDone(e);
+  // if user didn't click the delete icon, toggle the todo as done/not done
+  else toggleDone(e.target);
 });
+
 populateList(items, itemsList);
