@@ -39,13 +39,13 @@ function populateList(todos = [], todosList) {
     .map((todo, index) => {
       return `
   <li data-index=${index}>   
-    <div class="column-one custom-checkbox">
+    <div class="checkbox custom-checkbox">
       <input type="checkbox" id="item${index}" ${todo.done ? 'checked' : ''} />
       <label for="item${index}" ></label>   
     </div>
   
   
-    <div class="column-two">
+    <div class="todo-name">
         <label for="item${index}">
         <span class=${todo.done ? 'linethrough' : ''}>${todo.text}</span>
         </label>
